@@ -7,7 +7,11 @@ public class Main {
         String osName = "iOS";
         doExercise2(osName,2018);
         doExercise3 (95);
+        doExercise4("aabccddefgghiijjkk");
         int[] massive = {3, 2, 1, 6, 5};
+        doExercise5(massive);
+
+
     }
 
     public static void doExercise1(int year) {
@@ -23,15 +27,16 @@ public class Main {
     }
 
     // Exercise 2
-    public static int doExercise2(String name, int phoneYear) {
-        public static int getClientOS(String name){
-            if (name.equals("iOS")) {
-                return 0;
-            } else {
-                return 1;
-            }
-            int currentYear = 2022;
+    public static int getClientOS(String name) {
+        if (name.equals("iOS")) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    public static void doExercise2(String osName, int phoneYear) {
             int clientOS = getClientOS(osName);
+            int currentYear = 2022;
             if (phoneYear < currentYear && clientOS == 0)
                 System.out.println("Please download lite IOS app for your phone. Use this link ...");
             else if (clientOS == 1 && phoneYear < currentYear)
@@ -41,7 +46,6 @@ public class Main {
             else if (phoneYear == currentYear && clientOS == 1)
                 System.out.println("Download Android app from this link.");
         }
-    }
     // Exercise 3
     public static void doExercise3(int deliveryDistance) {
         if (deliveryDistance <= 20)
@@ -54,7 +58,16 @@ public class Main {
             System.out.println("Cart arrive on a work week.");
     }
     // Exercise 4
-
+    public static void doExercise4(String str) {
+        String[] arrSortArrays = str.split("");
+        var elem = arrSortArrays[0];
+        for (int i = 1; i < arrSortArrays.length; i++) {
+            if (elem.equals(arrSortArrays[i])) {
+                System.out.println("Дубль" + elem);
+            }
+            elem = arrSortArrays[i];
+        }
+    }
     // Exercise 5
     public static void doExercise5(int[] massive) {
         System.out.println();
